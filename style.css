@@ -1,0 +1,129 @@
+body {
+  font-family: 'Playfair Display', serif;
+  body,p {
+    font-family: 'Lato', sans-serif;
+  }
+  background: #fff0f5;
+  color: #333;
+  padding: 40px;
+}
+body {
+  background-image: url("romantic-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Lato', sans-serif;
+}
+.letter-box {
+  background-color: rgba(255, 255, 255, 0.9); /* slightly transparent white */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.center {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #d81b60;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #d81b60;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #ad1457;
+}
+
+form input, form textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #d81b60;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ad1457;
+}
+
+/* === ANIMATION CLASSES === */
+.fade-in {
+  animation: fadeIn 1.2s ease-in forwards;
+  opacity: 0;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s infinite;
+  color: #d81b60;
+  font-weight: bold;
+}
+
+.button:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+/* === ANIMATION KEYFRAMES === */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1.5deg);
+  }
+  75% {
+    transform: rotate(-1.5deg);
+  }
+}

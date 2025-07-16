@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💌 Gusto ko lang sabihin na . . .</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('romantic-bg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #d81b60;
+    }
+
+    .letter-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 30px auto;
+      max-width: 700px;
+      text-align: justify;
+    }
+
+    .button {
+      display: block;
+      margin: 40px auto;
+      padding: 12px 28px;
+      background-color: #d81b60;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ad1457;
+      transform: scale(1.05);
+    }
+
+    .spoiler {
+      background-color: #ccc;
+      color: transparent;
+      border-radius: 4px;
+      padding: 2px 6px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .spoiler.revealed {
+      color: #d81b60;
+      background-color: transparent;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      color: #ff4d88;
+      animation: floatHeart 6s linear infinite;
+      font-size: 20px;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.4); z-index: -1;"></div>
+
+  <h2>Gusto ko lang sabihin na...</h2>
+
+  <div class="letter-box">
+    <p>
+      So… hi. Good morning/good evening!<br><br>
+Sana nasa mabuti kang kalagayan habang binabasa mo ‘to.<br>
+
+Ngayon ko lang talaga ‘to gagawin sa buong buhay ko.<br>
+Ang tagal ko na ring kinimkim ‘to, pero ngayon lang ako nagkaroon ng lakas ng loob na sabihin.
+Hindi ko alam kung ito na ba ‘yung tamang timing  pero alam ko,
+mas malaking pagkakamali ko kung hindi ko ito masabi.<br> <br>
+Alam kong pareho pa tayong hindi pa ready, nag-aaral, may kanya-kanyang goals,
+at may mga bagay pa tayong gustong ayusin sa sarili natin  mentally, emotionally, physically. 
+Kaya itong mensahe na ‘to, hindi para pilitin ka o i pressure…
+Kundi para lang iparating na: <span class="spoiler">May Gusto ako sayo.</span>
+    </p>
+  </div>
+
+  <div class="letter-box">
+    <p>
+      Bakit ba ako nahulog sa’yo? oopsie, HAHAHA.<br>
+      Kasi ang sweet mo, ang bait mo at ang GORGEOUS👰‍♀️! NAKS!<br>
+      Alam kong clingy ka minsan at kahit nakakatawa '‘yan, nakakatuwa rin.<br>
+      Matalino ka, masipag, may pangarap, at may pakialam sa mga tao sa paligid mo.<br>
+      Hindi mo alam, pero malaking bagay '‘yon sa araw ko.<br>
+      Ang gaan mong kasama, at parang ang dali mong mahalin at dalhin sa paresan. 😅<br>
+      Alam ko naman na hindi naman ako ka gwapuhan o ka cute-an, ka tulad ng inaasam-asam mo.<br>
+      Pero sa lahat ng pagkukulang ko, isa lang ang sigurado:<br>
+      Totoo '‘tong nararamdaman ko para sa’yo. Sheesh HAHAHA.
+    </p>
+  </div>
+
+  <div class="letter-box">
+    <p>
+      Kaya sana… hindi ka mabigla or nagulat masyado sa message ko.<br>
+      Anuman ang maging sagot mo, o kung gusto mo munang manahimik — okay lang sa akin.<br>
+      At the end of the day, ay sana <strong>MAG KAIBIGAN PARIN TAYO</strong>.
+    </p>
+  </div>
+
+  <a href="page3.html" class="button">Sira ka Nazren!</a>
+
+  <audio id="bg-music" loop>
+    <source src="bg-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button onclick="playMusic()" style="position: fixed; bottom: 20px; right: 20px; background-color: #d81b60; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+    🎶 Sabayan natin ng music.
+  </button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.spoiler').forEach(el => {
+        el.addEventListener('click', () => {
+          el.classList.add('revealed');
+        });
+      });
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (16 + Math.random() * 10) + "px";
+        heart.textContent = "💖";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+
+      setInterval(createHeart, 400);
+    });
+
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.play();
+    }
+  </script>
+</body>
+</html>
